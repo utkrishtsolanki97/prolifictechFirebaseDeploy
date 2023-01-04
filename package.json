@@ -1,0 +1,35 @@
+{
+  "name": "prolifictech",
+  "version": "1.0.0",
+  "description": "Prolific Tech Official website",
+  "main": "server.js",
+  "type": "module",
+  "engines": {
+    "node": "15.10.0"
+  },
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm start\" \"npm run client\" ",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "heroku-run-build-script": true,
+  "author": "Utkrisht Solanki",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^6.2.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.7",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12",
+    "razorpay": "^2.0.6",
+    "shortid": "^2.2.16"
+  }
+}
